@@ -1,40 +1,45 @@
-import React, {useState} from 'react';
-import {Collapse, Container, Dropdown, NavbarBrand, NavItem, NavLink, Row} from 'react-bootstrap';
+import React, {CSSProperties, useState} from 'react';
+// eslint-disable-next-line no-unused-vars
+import {Collapse, Container, Dropdown, Nav, Navbar, NavItem, NavLink, Row} from 'react-bootstrap';
 import logo from 'src/assets/svg/logo.svg';
 import 'src/modules/app/header/Header.scss';
 import {languageOptions} from 'src/modules/app/header/languageDefinitions';
 import {getLanguage, getMenuDefinition, MenuDefinition} from 'src/modules/app/header/languagesUtils';
 
-const brandLogo = () => {
+const navbarBrandLogo = () => {
   return (
-    <NavbarBrand className='d-flex' href='./'>
+    <Navbar.Brand className='d-flex' href='./'>
       <img src={logo} className='App-logo' alt='' style={{height: '60px', width: '60px'}}/>
-    </NavbarBrand>
+    </Navbar.Brand>
   );
 };
 
-const navbarCollapse = (languageLabel: string) => {
+const navbarCollapse = (languageLabel: string, navbarExpanded: boolean) => {
   const menuDefinition: MenuDefinition = getMenuDefinition(languageLabel);
+  const buttonMargin:CSSProperties = navbarExpanded ? {marginTop: '10px'} : {marginLeft: '10px'};
   return (
     <>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"/>
-      </button>
-      <Collapse className="navbar-collapse">
+      <Navbar.Toggle aria-controls="navbarScroll" >
+        {/* className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"*/}
+        {/* aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">*/}
+        {/* <span className="navbar-toggler-icon"/>*/}
+      </Navbar.Toggle>
+      <Collapse className='navbar-collapse'>
         <ul className="navbar-nav">
-          <NavItem className="nav-link">{menuDefinition.explore}</NavItem>
-          <NavItem>
+          <Nav.Item>
+            <span className="nav-link-span">{menuDefinition.explore}</span>
+          </Nav.Item>
+          <Nav.Item>
             <a className="nav-link" href="#">{menuDefinition.becomeSeller}</a>
-          </NavItem>
-          <NavItem>
+          </Nav.Item>
+          <Nav.Item>
             <a className="nav-link" href="#">{menuDefinition.signIn}</a>
-          </NavItem>
-          <NavItem>
-            <button style={{marginLeft: '10px'}} className="btn btn-outline-success" type="submit">
+          </Nav.Item>
+          <Nav.Item>
+            <button style={buttonMargin} className="btn" type="submit">
               {menuDefinition.signUp}
             </button>
-          </NavItem>
+          </Nav.Item>
         </ul>
       </Collapse>
     </>
@@ -44,7 +49,7 @@ const navbarCollapse = (languageLabel: string) => {
 const languageDropdown = (languageLabel: string, setLanguageLabel: Function) => {
   return (
     <Dropdown onSelect={(eventKey: any) => setLanguageLabel(eventKey)}>
-      <Dropdown.Toggle style={{color: 'rgba(255, 255, 255, 0.55)'}} as={NavLink}>
+      <Dropdown.Toggle as={NavLink}>
         {getLanguage(languageLabel).value}
       </Dropdown.Toggle>
       <Dropdown.Menu variant="dark">
@@ -59,22 +64,24 @@ const languageDropdown = (languageLabel: string, setLanguageLabel: Function) => 
 };
 
 const navbarContainerFluid = () => {
-  const [languageLabel, setLanguageLabel] = useState( () => 'eng');
+  const [languageLabel, setLanguageLabel] = useState( 'eng');
+  // eslint-disable-next-line no-unused-vars
+  const [navbarExpanded, setNavbarExpanded] = useState(false);
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-      <Container fluid>
-        {brandLogo()}
+    <Navbar expand='sm' variant='dark'>
+      <Container fluid className='header-container'>
+        {navbarBrandLogo()}
         <div className='col-md-lg-7'/>
         {languageDropdown(languageLabel, setLanguageLabel)}
-        {navbarCollapse(languageLabel)}
+        {navbarCollapse(languageLabel, navbarExpanded)}
       </Container>
-    </nav>
+    </Navbar>
   );
 };
 
 export const Header = () => {
   return (
-    <Row>
+    <Row className='bg-dark'>
       {navbarContainerFluid()}
     </Row>
   );

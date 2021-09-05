@@ -1,5 +1,9 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 
+$header-container-items-color: #C6538C;
+$header-container-items-hover: #FFFFFF;
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -24,5 +28,60 @@
   .col-md-lg-7 {
     flex: 0 9999 auto;
     width: 58.33333333%;
+  }
+}
+
+.header-container {
+  font-weight: 600;
+  color: $header-container-items-color;
+
+  .nav-item {
+    .nav-link {
+      color: $header-container-items-color;
+
+      &:hover {
+        color: $header-container-items-hover;
+      }
+
+      &:focus {
+        color: $header-container-items-color;
+      }
+    }
+
+    .nav-link-span {
+      @extend .nav-link;
+      cursor: pointer;
+    }
+  }
+
+  .dropdown {
+    .dropdown-toggle {
+      &:hover {
+        color: $header-container-items-hover;
+      }
+
+      color: $header-container-items-color;
+    }
+  }
+
+  .btn {
+    color: $header-container-items-color;
+    border-color: $header-container-items-color;
+    background-color: transparent;
+
+    &:hover {
+      color: $header-container-items-hover;
+      background-color: #C6538C;
+      border-color: $header-container-items-hover;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.1rem $header-container-items-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $header-container-items-color;
+    border-color: $header-container-items-color;
   }
 }
