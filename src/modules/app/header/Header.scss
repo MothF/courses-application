@@ -1,21 +1,7 @@
-@import '~bootstrap/scss/bootstrap.scss';
-
-.Header-body {
-  height: 100vh;
-  min-height: 30vh;
-  background-color: red;
-}
-
-.Header-body2 {
-  min-height: 30vh;
-  background-color: green;
-}
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 .App-logo {
-  @extend .d-inline-block;
-  @extend .align-text-top;
-  width: 30%;
-  height: 30%;
+  height: 40vmin;
   pointer-events: none;
 }
 
@@ -31,5 +17,12 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 576px) {
+  .col-md-lg-7 {
+    flex: 0 9999 auto;
+    width: 58.33333333%;
   }
 }

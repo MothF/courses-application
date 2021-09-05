@@ -1,9 +1,8 @@
 import React from 'react';
 import {Container} from 'react-bootstrap';
 import 'src/modules/app/App.scss';
-import {Header} from 'src/modules/header/Header';
-import 'src/modules/header/Header.scss';
-
+import {Header} from 'src/modules/app/header/Header';
+import 'src/modules/app/header/Header.scss';
 
 /**
  *

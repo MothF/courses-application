@@ -22,7 +22,9 @@
     "baseUrl": "."
   },
   "include": [
-    "src/**/*",
+    "public",
+    "patches",
+    "./src/**/*",
     "src/assets/svg/custom.d.ts"
   ],
   "exclude": [
