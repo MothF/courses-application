@@ -4,13 +4,57 @@ import apple from 'src/assets/svg/apple.svg';
 import facebook from 'src/assets/svg/facebook.svg';
 import google from 'src/assets/svg/google.svg';
 import {MenuDefinition} from 'src/modules/app/header/languagesUtils';
-// import 'src/modules/app/header/sign-up/SignupFormPopup.scss'
+import 'src/modules/app/header/sign-up/SignUpFormPopup.scss';
 
 type SingUpFormPopupProps = {
   buttonMargin: CSSProperties,
   menuDefinition: MenuDefinition,
   state: [boolean, Function];
 }
+
+type NamedSvg = {
+  name: string,
+  svg: string
+}
+
+const continueWithButtonNames: NamedSvg[] = [
+  {
+    name: 'facebook',
+    svg: facebook,
+  },
+  {
+    name: 'google',
+    svg: google,
+  },
+  {
+    name: 'apple',
+    svg: apple,
+  },
+];
+
+const createContinueWithButtons = () => {
+  const capitalizedFirstChar = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+  const buttons = continueWithButtonNames.map((namedSvg) => {
+    const buttonClass = 'sign-up-button--' + namedSvg.name;
+    return (
+      <Row key={namedSvg.name} className='sign-up-row'>
+        <div className='col-sm-9'>
+          <button type='button' className={buttonClass}>
+            <img src={namedSvg.svg} alt='' className='sign-up-button--logo'/>
+            <p className='sign-up-button--alt'>Continue with {capitalizedFirstChar(namedSvg.name)}</p>
+          </button>
+        </div>
+      </Row>
+    );
+  });
+  return (
+    <>
+      {buttons}
+    </>
+  );
+};
 
 export const SignUpFormPopup: FunctionComponent<SingUpFormPopupProps> =
   ({buttonMargin, menuDefinition, state}) => {
@@ -24,48 +68,22 @@ export const SignUpFormPopup: FunctionComponent<SingUpFormPopupProps> =
         <button onClick={handleShow} style={buttonMargin} className='btn' type='submit'>
           {menuDefinition.signUp}
         </button>
-
-        <Modal backdropClassName='shadow' show={show} onHide={handleClose} centered>
-          <Modal.Header style={{borderBottom: 'none'}}>
+        <Modal contentClassName='sign-up-modal--content' backdropClassName='shadow' show={show}
+          onHide={handleClose} centered>
+          <Modal.Header className='sign-up-modal--header'>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Row className='justify-content-center' style={{margin: '12px 0'}}>
-              <div className='col-sm-9'>
-                <button type="button" className="btn w-100 justify-content-center"
-                  style={{
-                    backgroundColor: '#415fb9',
-                    borderRadius: '4px',
-                    padding: '12px 30px 12px 16px',
-                    fontWeight: 600,
-                    fontFamily: 'macan,helvetica neue,Helvetica,Arial,sans-serif',
-                    color: 'white',
-                  }}>
-                  <div className='row'>
-                    <div className='col-sm-1'>
-                      <img src={facebook} style={{width: '18px', height: '18px', marginRight: '5px'}} alt=''/>
-                    </div>
-                    <div className='col-sm-11'>
-                      Continue with Facebook
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </Row>
-            <button type="button" className="btn btn-success">
-              <img src={google} style={{width: '18px', height: '18px'}} alt=''/>
-              <p>Continue with Google</p>
-            </button>
-            <button type="button" className="btn btn-danger">
-              <img src={apple} style={{width: '18px', height: '18px'}} alt=''/>
-              <p>Continue with Apple</p>
-            </button>
+            {createContinueWithButtons()}
+            <div className='row' style={{textAlign: 'center', margin: '20px 0 20px'}}>
+              <span className='sign-up-separator'>OR</span>
+            </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant='primary' onClick={handleClose}>
               Save Changes
             </Button>
           </Modal.Footer>

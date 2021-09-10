@@ -1,7 +1,7 @@
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap.scss';
 
-$header-container-items-color: #C6538C;
-$header-container-items-hover: #FFFFFF;
+$header-container-items-color: #C6538C !important;
+$header-container-items-hover: #FFFFFF !important;
 
 
 .App-logo {
@@ -32,7 +32,7 @@ $header-container-items-hover: #FFFFFF;
 }
 
 .header-container {
-  font-weight: 600;
+  font-weight: 600 !important;
   color: $header-container-items-color;
 
   .nav-item {
@@ -67,16 +67,16 @@ $header-container-items-hover: #FFFFFF;
   .btn {
     color: $header-container-items-color;
     border-color: $header-container-items-color;
-    background-color: transparent;
+    background-color: transparent !important;
 
     &:hover {
       color: $header-container-items-hover;
-      background-color: #C6538C;
+      background-color: $header-container-items-color;
       border-color: $header-container-items-hover;
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.1rem $header-container-items-color;
+      box-shadow: 0 0 0 0 $header-container-items-color;
     }
   }
 
