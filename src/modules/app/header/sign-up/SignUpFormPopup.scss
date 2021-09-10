@@ -1,0 +1,8 @@
+@import '~bootstrap/scss/bootstrap.scss';
+//@import "~bootstrap/dist/css/bootstrap.css";
+
+
+.modal-row {
+  @extend .justify-content-center;
+  margin: 12px 0;
+}
