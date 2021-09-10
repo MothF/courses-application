@@ -5,17 +5,49 @@
   &--header {
     @extend .justify-content-center;
     border-bottom: none;
+    margin-top: 20px;
+    color: #404145;
+    font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
   }
+
   &--content {
     height: 600px;
     width: 90%;
     box-shadow: 0 0 12px #313131;
+  }
+
+  &--footer {
+    font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+
+    &--text {
+      @extend .sign-up-modal--footer;
+      color: #616161;
+    }
+
+    &--link {
+      @extend .sign-up-modal--footer;
+      margin-left: -15px;
+      color: #19A463;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
   }
 }
 
 .sign-up-row {
   @extend .justify-content-center;
   margin: 12px 0 !important;
+}
+
+.sign-up-form-control {
+  &:focus {
+    box-shadow: none;
+    border-color: #8b8c93;
+  }
 }
 
 .sign-up-button {
@@ -35,6 +67,18 @@
     box-shadow: none;
   }
 
+  &--continue {
+    @extend .sign-up-button;
+
+    &:hover {
+      background: #19A463;
+      color: #FFFFFF;
+    }
+
+    color: #FFFFFF;
+    background-color: #1DBF73;
+  }
+
   &--facebook {
     @extend .sign-up-button;
 
@@ -52,11 +96,11 @@
 
     &:hover {
       color: #616161;
-      background-color: #efefef;
-      border: 1px solid #e4e5e7;
+      background-color: #EFEFEF;
+      border: 1px solid #E4E5E7;
     }
 
-    border: 1px solid #e4e5e7;
+    border: 1px solid #E4E5E7;
     background-color: #FFFFFF;
     color: #505050;
   }
@@ -73,6 +117,12 @@
 }
 
 .sign-up-separator {
+  &--row {
+    @extend .row;
+    text-align: center;
+    margin: 20px 0 20px;
+  }
+
   font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
   color: #858585;
 }
