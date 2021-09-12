@@ -7,14 +7,28 @@ import {languageOptions} from 'src/modules/app/header/languageDefinitions';
 import {getLanguage, getMenuDefinition, MenuDefinition} from 'src/modules/app/header/languagesUtils';
 import {SignUpFormPopup} from 'src/modules/app/header/sign-up/SignUpFormPopup';
 
+export const Header = () => {
+  return (
+    <Row className='bg-dark'>
+      <Navbar expand='sm'>
+        <Container fluid className='header-container'>
+          {navbarBrandLogo}
+          <div className='col-md-lg-7'/>
+          {navbarCollapse()}
+        </Container>
+      </Navbar>
+    </Row>
+  );
+};
+
 const navbarBrandLogo = (
   <Navbar.Brand className='d-flex' href='./'>
     <img src={logo} className='App-logo' alt='' style={{height: '60px', width: '60px'}}/>
   </Navbar.Brand>
 );
 
-
-const navbarCollapse = (languageLabel: string, setLanguageLabel: Function) => {
+const navbarCollapse = () => {
+  const [languageLabel, setLanguageLabel] = useState( 'eng');
   const menuDefinition: MenuDefinition = getMenuDefinition(languageLabel);
   const [collapsed, setCollapsed] = useState(false);
   return (
@@ -59,31 +73,12 @@ const languageDropdown = (languageLabel: string, setLanguageLabel: Function) => 
       <Dropdown.Menu variant='dark'>
         {
           languageOptions.map((lang) =>
-            <Dropdown.Item key={lang.label} eventKey={lang.label}>{lang.value}</Dropdown.Item>,
+            <Dropdown.Item key={lang.label} eventKey={lang.label}>
+              {lang.value}
+            </Dropdown.Item>,
           )
         }
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
-
-const navbarContainerFluid = () => {
-  const [languageLabel, setLanguageLabel] = useState( 'eng');
-  return (
-    <Navbar expand='sm'>
-      <Container fluid className='header-container'>
-        {navbarBrandLogo}
-        <div className='col-md-lg-7'/>
-        {navbarCollapse(languageLabel, setLanguageLabel)}
-      </Container>
-    </Navbar>
-  );
-};
-
-export const Header = () => {
-  return (
-    <Row className='bg-dark'>
-      {navbarContainerFluid()}
-    </Row>
   );
 };

@@ -62,6 +62,19 @@ $header-container-items-hover: #FFFFFF !important;
 
       color: $header-container-items-color;
     }
+
+    .dropdown-menu {
+      @extend .bg-dark;
+    }
+
+    .dropdown-item {
+      @extend .bg-dark;
+      color: $header-container-items-color;
+      //background-color: red;
+      &:hover {
+        background-color: rgb(51, 57, 64) !important;
+      }
+    }
   }
 
   .btn {

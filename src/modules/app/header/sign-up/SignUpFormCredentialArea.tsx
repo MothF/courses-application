@@ -8,7 +8,6 @@ export const SignUpFormCredentialArea = () => {
 
   const handleSubmit = (event: FormEvent) => {
     const form = event.currentTarget as HTMLFormElement;
-    console.log(form.checkValidity());
     if (form && !form.checkValidity()) {
       event.preventDefault();
       event.stopPropagation();
@@ -20,7 +19,7 @@ export const SignUpFormCredentialArea = () => {
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Group className='sign-up-row row' controlId='formBasicEmail'>
         <Col sm={9}>
-          <Form.Control className='sign-up-form-control' type='email' placeholder='Email / Username' required/>
+          <Form.Control className='sign-up-form-control' type='email' placeholder='Email' required/>
         </Col>
       </Form.Group>
       <Form.Group className='sign-up-row row' controlId='formBasicPassword'>
