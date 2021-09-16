@@ -56,7 +56,7 @@ export const SignUpFormPopup: FunctionComponent<SingUpFormPopupProps> =
         <Modal contentClassName='sign-up-modal--content' backdropClassName='shadow' show={show}
           onHide={handleClose} centered>
           <Modal.Header className='sign-up-modal--header'>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title className='sign-up-modal--title'>Join us</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {createContinueWithButtons()}

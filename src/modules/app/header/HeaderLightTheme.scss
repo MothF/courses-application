@@ -1,0 +1,79 @@
+@import 'Header';
+
+$primary-color: #f8bbd0 !important;
+$accent-color: #6a1b9a !important;
+
+.header-container-light {
+  font-weight: bold !important;
+  color: $primary-color;
+
+  .nav-item {
+    .nav-link {
+      color: $primary-color;
+      font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+
+      &:hover {
+        color: $accent-color;
+      }
+
+      &:focus {
+        color: $primary-color;
+      }
+    }
+
+    .nav-link-span {
+      @extend .nav-link;
+      cursor: pointer;
+    }
+  }
+
+  .dropdown {
+    .dropdown-menu {
+      @extend .bg-dark;
+    }
+
+    .dropdown-toggle {
+      color: $primary-color;
+      font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+
+      &:hover {
+        color: $accent-color;
+      }
+
+    }
+
+
+    .dropdown-item {
+      @extend .bg-dark;
+      color: $primary-color;
+      font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+
+      &:hover {
+        background-color: rgb(51, 57, 64) !important;
+      }
+    }
+  }
+
+  .btn {
+    color: $primary-color;
+    border-color: $primary-color;
+    background-color: transparent !important;
+    font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+
+    &:hover {
+      color: $accent-color;
+      background-color: $primary-color;
+      border-color: $accent-color;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0 $primary-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+}

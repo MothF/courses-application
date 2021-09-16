@@ -1,8 +1,14 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-$header-container-items-color: #C6538C !important;
-$header-container-items-hover: #FFFFFF !important;
+$dark-theme: true !default;
 
+$primary-color: #f8bbd0 !default;
+$accent-color: #6a1b9a !default;
+
+@if $dark-theme {
+  $primary-color: #C6538C !important;
+  $accent-color: #FFFFFF !important;
+}
 
 .App-logo {
   height: 40vmin;
@@ -31,70 +37,7 @@ $header-container-items-hover: #FFFFFF !important;
   }
 }
 
-.header-container {
-  font-weight: 600 !important;
-  color: $header-container-items-color;
-
-  .nav-item {
-    .nav-link {
-      color: $header-container-items-color;
-
-      &:hover {
-        color: $header-container-items-hover;
-      }
-
-      &:focus {
-        color: $header-container-items-color;
-      }
-    }
-
-    .nav-link-span {
-      @extend .nav-link;
-      cursor: pointer;
-    }
-  }
-
-  .dropdown {
-    .dropdown-toggle {
-      &:hover {
-        color: $header-container-items-hover;
-      }
-
-      color: $header-container-items-color;
-    }
-
-    .dropdown-menu {
-      @extend .bg-dark;
-    }
-
-    .dropdown-item {
-      @extend .bg-dark;
-      color: $header-container-items-color;
-      //background-color: red;
-      &:hover {
-        background-color: rgb(51, 57, 64) !important;
-      }
-    }
-  }
-
-  .btn {
-    color: $header-container-items-color;
-    border-color: $header-container-items-color;
-    background-color: transparent !important;
-
-    &:hover {
-      color: $header-container-items-hover;
-      background-color: $header-container-items-color;
-      border-color: $header-container-items-hover;
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 0 $header-container-items-color;
-    }
-  }
-
-  .navbar-toggler {
-    color: $header-container-items-color;
-    border-color: $header-container-items-color;
-  }
+.navbar-header {
+  padding-left: 3.5rem !important;
+  padding-right: 3.5rem !important;
 }
