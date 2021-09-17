@@ -1,4 +1,4 @@
-import React, {CSSProperties, FunctionComponent} from 'react';
+import React, {FunctionComponent} from 'react';
 import {Modal} from 'react-bootstrap';
 import apple from 'src/assets/svg/apple.svg';
 import facebook from 'src/assets/svg/facebook.svg';
@@ -9,7 +9,6 @@ import {SignUpFormCredentialArea} from 'src/modules/app/header/sign-up/SignUpFor
 import 'src/modules/app/header/sign-up/SignUpFormPopup.scss';
 
 type SingUpFormPopupProps = {
-  buttonMargin: CSSProperties,
   menuDefinition: MenuDefinition,
   state: [boolean, Function];
 }
@@ -42,7 +41,7 @@ const createContinueWithButtons = () => {
 };
 
 export const SignUpFormPopup: FunctionComponent<SingUpFormPopupProps> =
-  ({buttonMargin, menuDefinition, state}) => {
+  ({menuDefinition, state}) => {
     const show = state[0];
     const setShow = state[1];
 
@@ -50,7 +49,7 @@ export const SignUpFormPopup: FunctionComponent<SingUpFormPopupProps> =
     const handleShow = () => setShow(true);
     return (
       <>
-        <button onClick={handleShow} style={buttonMargin} className='btn' type='submit'>
+        <button onClick={handleShow} style={{marginLeft: '10px'}} className='btn' type='submit'>
           {menuDefinition.signUp}
         </button>
         <Modal contentClassName='sign-up-modal--content' backdropClassName='shadow' show={show}

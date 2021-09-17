@@ -3,6 +3,11 @@
 $primary-color: #C6538C !important;
 $accent-color: #FFFFFF !important;
 
+.header-main-navbar-dark {
+  @extend .bg-dark;
+  padding-right: 0 !important;
+}
+
 .header-container-dark {
   font-weight: bold !important;
   color: $primary-color;
@@ -42,11 +47,11 @@ $accent-color: #FFFFFF !important;
 
     }
 
-
     .dropdown-item {
       @extend .bg-dark;
       color: $primary-color;
       font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+      padding: 0.7rem 6rem 0.7rem 2rem;
 
       &:hover {
         background-color: rgb(51, 57, 64) !important;

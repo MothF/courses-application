@@ -11,10 +11,10 @@ import 'src/modules/app/header/Header.scss';
  */
 function App() {
   return (
-    <Container fluid>
+    <Container fluid className='p-0' style={{overflow: 'hidden'}}>
       <Header/>
       <HeadingCarousel/>
-      <Row style={{height: '900px', backgroundColor: 'red', marginTop: '0'}}/> {{/* todo remove*/}}
+      <Row style={{height: '900px', backgroundColor: 'red', marginTop: '0'}}/>
     </Container>
   );
 }

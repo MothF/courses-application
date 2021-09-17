@@ -10,18 +10,26 @@ import {getLanguage, getMenuDefinition, MenuDefinition} from 'src/modules/app/he
 import {SignUpFormPopup} from 'src/modules/app/header/sign-up/SignUpFormPopup';
 
 export const Header = () => {
-  const [theme, setTheme] = useState('header-container-dark');
+  const [theme, setTheme] = useState({
+    mainRowTheme: 'header-main-navbar-dark',
+    containerTheme: 'header-container-dark',
+  });
 
   useEffect(() => {
     window.onscroll = () => {
-      setTheme(window.scrollY > 0 ? 'header-container-light' : 'header-container-dark');
+      window.scrollY >= 100 ?
+        setTheme({mainRowTheme: 'header-main-navbar-light', containerTheme: 'header-container-light'}) :
+        setTheme({mainRowTheme: 'header-main-navbar-dark', containerTheme: 'header-container-dark'});
     };
   }, []);
-
   return (
-    <Row className='bg-dark fixed-top'>
+    <Row className={`${theme.mainRowTheme} fixed-top mx-auto`} style={{
+      transition: 'all 0.65s ease',
+      WebkitTransition: 'all 0.65s ease',
+      MozTransition: 'all 0.65s ease',
+    }}>
       <Navbar expand='sm' className='navbar-header'>
-        <Container fluid className={theme}>
+        <Container fluid className={theme.containerTheme}>
           {navbarBrandLogo}
           <div className='col-md-lg-7'/>
           {navbarCollapse()}
@@ -65,9 +73,7 @@ const navbarCollapse = () => {
             <a className='nav-link' href='#'>{menuDefinition.signIn}</a>
           </Nav.Item>
           <Nav.Item>
-            <SignUpFormPopup buttonMargin={collapsed ? {marginTop: '10px'} : {marginLeft: '10px'}}
-              menuDefinition={menuDefinition}
-              state={useState(false)}/>
+            <SignUpFormPopup menuDefinition={menuDefinition} state={useState(false)}/>
           </Nav.Item>
         </ul>
       </Collapse>

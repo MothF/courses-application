@@ -1,7 +1,12 @@
 @import 'Header';
 
-$primary-color: #f8bbd0 !important;
+$primary-color: #7c757b !important;
 $accent-color: #6a1b9a !important;
+
+.header-main-navbar-light {
+  @extend .bg-light;
+  padding-right: 0 !important;
+}
 
 .header-container-light {
   font-weight: bold !important;
@@ -29,7 +34,7 @@ $accent-color: #6a1b9a !important;
 
   .dropdown {
     .dropdown-menu {
-      @extend .bg-dark;
+      @extend .bg-light;
     }
 
     .dropdown-toggle {
@@ -41,15 +46,16 @@ $accent-color: #6a1b9a !important;
       }
 
     }
-
-
+    
     .dropdown-item {
-      @extend .bg-dark;
+      @extend .bg-light;
       color: $primary-color;
       font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+      padding: 0.7rem 6rem 0.7rem 2rem;
 
       &:hover {
-        background-color: rgb(51, 57, 64) !important;
+        color: $accent-color;
+        background-color: rgb(198, 199, 200) !important;
       }
     }
   }
