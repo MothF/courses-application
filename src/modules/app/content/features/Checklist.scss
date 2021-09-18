@@ -1,0 +1,85 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.checklist-container-parent {
+  @extend .container-fluid;
+  background-color: #0d084d;
+}
+
+.checklist-container {
+  @extend .container;
+  @extend .px-3;
+  @extend .py-4;
+  @extend .my-5;
+}
+
+.checklist-row {
+  @extend .row;
+  @extend .row-cols-md-2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-area {
+  max-width: 400px;
+  padding-bottom: 24px;
+  font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+  color: #efefef;
+}
+
+.business-heading {
+  @extend .text-area;
+  font-weight: bolder;
+}
+
+.business-common {
+  @extend .text-area;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.check-img {
+  @extend .my-2;
+  width: 30px;
+  height: 30px;
+}
+
+.business-checklist {
+  @extend .text-area;
+  max-width: fit-content;
+  font-size: 18px;
+  padding-bottom: 0;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+
+  &:hover > li {
+    font-size: 18.5px;
+    margin-bottom: 20px;
+
+    .business-checklist--li--img {
+      transform: scale(1.1);
+    }
+  }
+
+  &--li {
+    margin-bottom: 10px;
+    transition: font-size 0.2s, margin-bottom 0.2s;
+    @for $i from 1 through 3 {
+      $delay: ($i - 1) * 0.7;
+      &:nth-of-type(#{$i}) {
+        > img {
+          transition-delay: #{$delay}s;
+        }
+        transition-delay: #{$delay}s;
+      }
+    }
+
+    &--img {
+      margin-right: 10px;
+      filter: invert(50%);
+      width: 25px;
+      height: 25px;
+      transition: transform 0.2s;
+    }
+  }
+}

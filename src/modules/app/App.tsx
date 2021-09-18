@@ -4,8 +4,9 @@ import 'src/modules/app/App.scss';
 import {HeadingCarousel} from 'src/modules/app/content/carousel/HeadingCarousel';
 import {Header} from 'src/modules/app/header/Header';
 import 'src/modules/app/header/Header.scss';
-import {FeaturesContainer} from './content/features/FeaturesContainer';
+import {FeaturesContainerParent} from './content/features/FeaturesContainerParent';
 import {Divider} from './content/divider/Divider';
+import {DividerImage} from './content/divider/DividerImage';
 
 /**
  *
@@ -17,8 +18,8 @@ function App() {
       <Header/>
       <HeadingCarousel/>
       <Divider/>
-      <FeaturesContainer/>
-      <Divider/>
+      <FeaturesContainerParent/>
+      <DividerImage/>
     </Container>
   );
 }

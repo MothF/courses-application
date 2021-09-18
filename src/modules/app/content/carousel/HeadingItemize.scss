@@ -10,9 +10,11 @@
 }
 
 .itemize-row {
+  @extend .row;
   display: flex;
+  justify-content: space-evenly;
   align-content: center;
-  --bs-gutter-x: 1rem;
+  --bs-gutter-x: 0 !important;
 }
 
 .itemize-col {

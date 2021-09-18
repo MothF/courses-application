@@ -62,7 +62,7 @@ const navbarCollapse = () => {
             {languageDropdown(languageLabel, setLanguageLabel)}
           </Nav.Item>
           <Nav.Item>
-            <OverlayTrigger trigger={'click'} placement='bottom' overlay={ExplorePopover}>
+            <OverlayTrigger rootClose trigger={'click'} placement='bottom' overlay={ExplorePopover}>
               <span className='nav-link-span'>{menuDefinition.explore}</span>
             </OverlayTrigger>
           </Nav.Item>
