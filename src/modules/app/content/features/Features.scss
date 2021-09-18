@@ -1,0 +1,62 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.feature-container {
+  @extend .container;
+  @extend .px-4;
+  @extend .py-5;
+}
+
+.feature-heading {
+  @extend .pb-2;
+  @extend .border-bottom;
+}
+
+.features-row {
+  @extend .row;
+  @extend .row-cols-sm-4;
+  @extend .g-4;
+  @extend .py-5;
+}
+
+.feature {
+  @extend .col-sm-3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 25%;
+  max-width: fit-content;
+}
+
+.feature-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 85px;
+
+  &:hover {
+    cursor: pointer;
+
+    .feature-line {
+      border-bottom: 2px solid #f54914;
+      width: 85px;
+    }
+  }
+}
+
+.feature-img {
+  @extend .my-2;
+  width: 30px;
+  height: 30px;
+}
+
+.feature-line {
+  width: 50px;
+  border-bottom: 2px solid #c6c7c8;
+  transition: width 0.2s ease;
+}
+
+.feature-span {
+  @extend .my-2;
+  font: 400 16px/24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;;
+}

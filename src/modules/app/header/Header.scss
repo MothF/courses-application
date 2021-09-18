@@ -1,15 +1,5 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-$dark-theme: true !default;
-
-$primary-color: #f8bbd0 !default;
-$accent-color: #6a1b9a !default;
-
-@if $dark-theme {
-  $primary-color: #C6538C !important;
-  $accent-color: #FFFFFF !important;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -30,7 +20,7 @@ $accent-color: #6a1b9a !default;
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 723px) {
   .col-md-lg-7 {
     flex: 0 9999 auto;
     width: 58.33333333%;
@@ -38,6 +28,6 @@ $accent-color: #6a1b9a !default;
 }
 
 .navbar-header {
-  padding-left: 3.5rem !important;
-  padding-right: 3.5rem !important;
+  padding-left: 3vw !important;
+  padding-right: 3vw !important;
 }

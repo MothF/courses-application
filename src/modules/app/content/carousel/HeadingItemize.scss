@@ -1,9 +1,12 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-.itemize-container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+@media (min-width: 1400px) {
+  .itemize-container {
+    width: 100%;
+    max-width: 1500px !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .itemize-row {
@@ -14,14 +17,26 @@
 
 .itemize-col {
   @extend .justify-content-center;
+  max-width: fit-content !important;
+  height: fit-content;
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
   position: relative;
   text-align: center;
 }
 
-.itemize-button-wrapper {
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
-  position: absolute;
+.itemize-image {
+  &--self {
+    width: 252px;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 3px rgba(86, 86, 86, 0.38);
+    transition: all 300ms;
+    
+    &:hover {
+      filter: brightness(110%);
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
 }

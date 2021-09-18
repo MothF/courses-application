@@ -1,9 +1,11 @@
 import React from 'react';
-import {Container, Row} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import 'src/modules/app/App.scss';
 import {HeadingCarousel} from 'src/modules/app/content/carousel/HeadingCarousel';
 import {Header} from 'src/modules/app/header/Header';
 import 'src/modules/app/header/Header.scss';
+import {FeaturesContainer} from './content/features/FeaturesContainer';
+import {Divider} from './content/divider/Divider';
 
 /**
  *
@@ -14,7 +16,9 @@ function App() {
     <Container fluid className='p-0' style={{overflow: 'hidden'}}>
       <Header/>
       <HeadingCarousel/>
-      <Row style={{height: '900px', backgroundColor: 'red', marginTop: '0'}}/>
+      <Divider/>
+      <FeaturesContainer/>
+      <Divider/>
     </Container>
   );
 }
