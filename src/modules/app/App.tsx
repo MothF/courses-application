@@ -7,6 +7,7 @@ import 'src/modules/app/header/Header.scss';
 import {FeaturesContainerParent} from './content/features/FeaturesContainerParent';
 import {Divider} from './content/divider/Divider';
 import {DividerImage} from './content/divider/DividerImage';
+import {Opportunities} from './content/opportunities/Opportunities';
 
 /**
  *
@@ -20,6 +21,7 @@ function App() {
       <Divider/>
       <FeaturesContainerParent/>
       <DividerImage/>
+      <Opportunities/>
     </Container>
   );
 }

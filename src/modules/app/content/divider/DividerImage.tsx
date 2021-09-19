@@ -7,7 +7,7 @@ export const DividerImage = () => {
     backgroundAttachment: 'fixed, fixed',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    height: '100vh',
+    height: '80vh',
     width: '100vw%',
   };
   return (

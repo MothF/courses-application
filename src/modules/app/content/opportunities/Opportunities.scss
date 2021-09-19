@@ -1,0 +1,14 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.oppo-image {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.oppo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
