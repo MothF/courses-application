@@ -67,10 +67,10 @@ const navbarCollapse = () => {
             </OverlayTrigger>
           </Nav.Item>
           <Nav.Item>
-            <a className='nav-link' href='#'>{menuDefinition.becomeSeller}</a>
+            <a className='nav-link underliner'>{menuDefinition.becomeSeller}</a>
           </Nav.Item>
           <Nav.Item>
-            <a className='nav-link' href='#'>{menuDefinition.signIn}</a>
+            <a className='nav-link underliner'>{menuDefinition.signIn}</a>
           </Nav.Item>
           <Nav.Item>
             <SignUpFormPopup menuDefinition={menuDefinition} state={useState(false)}/>
