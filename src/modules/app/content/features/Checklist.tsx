@@ -30,7 +30,7 @@ export const Checklist = () => {
               <CheckElement item={4} text='A team of Fiverr Business Success Managers is here to help you'/>
             </ul>
           </div>
-          <div className='col-lg-6 image-col'>
+          <div className='col-lg-6 image-col' id='image-column'>
             <img className='image-col--img' src={orange} alt='team'/>
           </div>
         </div>
@@ -48,17 +48,19 @@ const CheckElement: FunctionComponent<CheckElementProps> = ({text, item}) => {
   return (
     <li className='business-checklist--li'>
       <img src={check} alt='' className='business-checklist--li--img'
-        data-aos='custom'
+        data-aos='list'
         data-aos-delay={item * 250}
         data-aos-duration='1000'
-        data-aos-anchor='#checklist-container'
-        data-aos-anchor-placement="center-center"
+        data-aos-anchor='#image-column'
+        data-aos-anchor-placement="top-center"
+        data-aos-once='true'
       />
       <span data-aos='fade-up'
         data-aos-delay={item * 250}
         data-aos-duration='1000'
-        data-aos-anchor='#checklist-container'
-        data-aos-anchor-placement="center-center"
+        data-aos-anchor='#image-column'
+        data-aos-anchor-placement="top-center"
+        data-aos-once='true'
       >
         {text}
       </span>
