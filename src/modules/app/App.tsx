@@ -22,6 +22,7 @@ function App() {
       <FeaturesContainerParent/>
       <DividerImage/>
       <Opportunities/>
+      <Divider/>
     </Container>
   );
 }

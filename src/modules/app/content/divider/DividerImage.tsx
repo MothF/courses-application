@@ -8,7 +8,7 @@ export const DividerImage = () => {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     height: '80vh',
-    width: '100vw%',
+    width: '100vw',
   };
   return (
     <div style={back}/>

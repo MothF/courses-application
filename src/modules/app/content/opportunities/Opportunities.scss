@@ -1,5 +1,12 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+.oppo-container {
+  @extend .container;
+  @extend .px-4;
+  @extend .py-5;
+  @extend .my-5;
+}
+
 .oppo-image {
   display: flex;
   flex-wrap: wrap;
@@ -12,9 +19,48 @@
   flex-direction: column;
   justify-content: center;
   
+  &--left {
+    @extend .oppo-text;
+    padding-right: 3rem;
+  }
+  
+  &--right {
+    @extend .oppo-text;
+    padding-left: 3rem;
+  }
+  
   &--header {
     font-weight: 400;
     font-size: 50px;
     color: rgba(0, 0, 0, 0.7) !important;
   }
+}
+
+.oppo-divider {
+  width: 85vw;
+  text-align: center;
+  //margin-right: auto;
+  //margin-left: auto;
+}
+
+.oppo-separator {
+  &--row {
+    @extend .row;
+    text-align: center;
+    margin: 20px 0 20px;
+  }
+  display: flex;
+  justify-content: center;
+  
+  color: #858585;
+}
+
+.oppo-separator:before, .oppo-separator:after {
+  background-color: darkgrey;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 40%;
 }
