@@ -1,0 +1,48 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import 'src/modules/app/header/sign-up/SignUpFormPopup';
+
+.pricing-container {
+  @extend .container;
+  @extend .px-4;
+  @extend .py-5;
+}
+
+.pricing-heading {
+  @extend .pb-2;
+  @extend .border-bottom;
+}
+
+.pricing-description {
+  max-width: 700px;
+  @extend .p-3;
+  @extend .mx-auto;
+  @extend .text-center;
+  @extend .lead;
+  @extend .text-muted;
+}
+
+.pricing-row {
+  @extend .row;
+  @extend .row-cols-md-3;
+  @extend .text-center;
+  padding: 2rem 12rem;
+}
+
+.pricing-btn-default {
+  @extend .sign-up-button--continue;
+  border: 1px solid #1DBF73;
+  background-color: #FFFFFF;
+  color: #1DBF73;
+}
+
+.pricing-btn-primary {
+  @extend .sign-up-button--continue;
+}
+
+.pricing-border-primary {
+  border-color: #1DBF73 !important;
+}
+
+.pricing-bg-primary {
+  background-color: #1DBF73 !important;
+}

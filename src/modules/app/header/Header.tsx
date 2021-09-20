@@ -46,6 +46,15 @@ const navbarBrandLogo = (
 );
 
 const navbarCollapse = () => {
+  const [show, setShow] = useState<boolean>(false);
+  const signUpButton = () => {
+    return (
+      <button onClick={() => setShow(true)} style={{marginLeft: '10px'}} className='btn' type='submit'>
+        {menuDefinition.signUp}
+      </button>
+    );
+  };
+
   const [languageLabel, setLanguageLabel] = useState('eng');
   const menuDefinition: MenuDefinition = getMenuDefinition(languageLabel);
   const [collapsed, setCollapsed] = useState(false);
@@ -67,13 +76,14 @@ const navbarCollapse = () => {
             </OverlayTrigger>
           </Nav.Item>
           <Nav.Item>
-            <a className='nav-link underliner'>{menuDefinition.becomeSeller}</a>
+            <a className='nav-link'>{menuDefinition.becomeSeller}</a>
           </Nav.Item>
           <Nav.Item>
-            <a className='nav-link underliner'>{menuDefinition.signIn}</a>
+            <a className='nav-link'>{menuDefinition.signIn}</a>
           </Nav.Item>
           <Nav.Item>
-            <SignUpFormPopup menuDefinition={menuDefinition} state={useState(false)}/>
+            {signUpButton()}
+            <SignUpFormPopup showState={[show, setShow]}/>
           </Nav.Item>
         </ul>
       </Collapse>

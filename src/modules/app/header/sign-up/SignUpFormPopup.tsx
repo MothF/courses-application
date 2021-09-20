@@ -3,14 +3,12 @@ import {Modal} from 'react-bootstrap';
 import apple from 'src/assets/svg/apple.svg';
 import facebook from 'src/assets/svg/facebook.svg';
 import google from 'src/assets/svg/google.svg';
-import {MenuDefinition} from 'src/modules/app/header/languagesUtils';
 import {SignUpFormButton} from 'src/modules/app/header/sign-up/SignUpFormButton';
 import {SignUpFormCredentialArea} from 'src/modules/app/header/sign-up/SignUpFormCredentialArea';
 import 'src/modules/app/header/sign-up/SignUpFormPopup.scss';
 
 type SingUpFormPopupProps = {
-  menuDefinition: MenuDefinition,
-  state: [boolean, Function];
+  showState: [boolean, Function];
 }
 
 type NamedSvg = {
@@ -41,17 +39,12 @@ const createContinueWithButtons = () => {
 };
 
 export const SignUpFormPopup: FunctionComponent<SingUpFormPopupProps> =
-  ({menuDefinition, state}) => {
-    const show = state[0];
-    const setShow = state[1];
-
+  ({showState}) => {
+    const show = showState[0];
+    const setShow = showState[1];
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     return (
       <>
-        <button onClick={handleShow} style={{marginLeft: '10px'}} className='btn' type='submit'>
-          {menuDefinition.signUp}
-        </button>
         <Modal contentClassName='sign-up-modal--content' backdropClassName='shadow' show={show}
           onHide={handleClose} centered>
           <Modal.Header className='sign-up-modal--header'>

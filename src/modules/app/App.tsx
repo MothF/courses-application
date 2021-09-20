@@ -8,6 +8,7 @@ import {FeaturesContainerParent} from './content/features/FeaturesContainerParen
 import {Divider} from './content/divider/Divider';
 import {DividerImage} from './content/divider/DividerImage';
 import {Opportunities} from './content/opportunities/Opportunities';
+import {Pricing} from './content/pricing/Pricing';
 
 /**
  *
@@ -23,6 +24,7 @@ function App() {
       <DividerImage/>
       <Opportunities/>
       <Divider/>
+      <Pricing/>
     </Container>
   );
 }

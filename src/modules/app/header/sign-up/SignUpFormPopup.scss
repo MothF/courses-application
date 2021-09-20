@@ -76,6 +76,7 @@
 
   &--continue {
     @extend .sign-up-button;
+    padding: 12px 30px 12px 30px !important;
 
     &:hover {
       background: #19A463;

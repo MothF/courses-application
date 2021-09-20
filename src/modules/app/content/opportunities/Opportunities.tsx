@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect, useRef} from 'react';
+import React, {FunctionComponent, useEffect} from 'react';
 import 'src/modules/app/content/opportunities/Opportunities.scss';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -9,10 +9,6 @@ export const Opportunities = () => {
   useEffect(() => {
     Aos.init({easing: 'ease-in-out'});
   }, []);
-  const ref = useRef(null);
-  useEffect(() => {
-    console.log(ref.current);
-  }, [ref.current]);
   return (
     <>
       {firstOppo()}
